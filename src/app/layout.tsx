@@ -22,12 +22,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      data-theme ="dark"
+      data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }
