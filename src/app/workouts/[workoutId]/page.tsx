@@ -1,3 +1,5 @@
+import SaveForLater from "@/app/components/WorkoutDetails/SaveForLater";
+import TodaysPlan from "@/app/components/WorkoutDetails/TodaysPlan";
 import { ILibrary } from "@/types/LibraryTypes";
 import Image from "next/image";
 import React from "react";
@@ -125,15 +127,8 @@ const WorkoutDetailsPage = async ({ params }: IWorkoutDetailsPageProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <button className="flex items-center gap-2 rounded-md bg-[#ccff00] px-5 py-3 text-sm font-semibold text-black">
-              <i className="fa-regular fa-calendar-plus"></i>
-              Add to today&apos;s plan
-            </button>
-
-            <button className="flex items-center gap-2 rounded-md border border-gray-700 px-5 py-3 text-sm text-white">
-              <i className="fa-regular fa-bookmark"></i>
-              Save for later
-            </button>
+            <TodaysPlan workout ={libraryData}></TodaysPlan>
+            <SaveForLater workout ={libraryData}></SaveForLater>
           </div>
         </div>
       </div>
