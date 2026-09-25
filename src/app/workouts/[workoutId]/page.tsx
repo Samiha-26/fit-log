@@ -125,11 +125,13 @@ const WorkoutDetailsPage = async ({ params }: IWorkoutDetailsPageProps) => {
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <button className="rounded-md bg-[#ccff00] px-5 py-3 text-sm font-semibold text-black">
+            <button className="flex items-center gap-2 rounded-md bg-[#ccff00] px-5 py-3 text-sm font-semibold text-black">
+              <i className="fa-regular fa-calendar-plus"></i>
               Add to today&apos;s plan
             </button>
 
-            <button className="rounded-md border border-gray-700 px-5 py-3 text-sm text-white">
+            <button className="flex items-center gap-2 rounded-md border border-gray-700 px-5 py-3 text-sm text-white">
+              <i className="fa-regular fa-bookmark"></i>
               Save for later
             </button>
           </div>
