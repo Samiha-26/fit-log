@@ -24,6 +24,9 @@ const WorkoutCard = ({
       setSavedPlan(savedPlan.filter((item) => item.id !== workout.id));
     }
   };
+  const handleMarkAsDone = () => {
+    setPlan(plan.filter((item) => item.id !== workout.id));
+  };
 
   return (
     <div className="flex flex-col gap-5 rounded-xl border border-gray-800 bg-[#15171D] p-4 sm:flex-row sm:items-center">
@@ -60,7 +63,10 @@ const WorkoutCard = ({
         </Link>
 
         {showMarkAsDone && (
-          <button className="rounded-3xl bg-[#ccff00] px-4 py-2 text-xs font-semibold text-black">
+          <button
+            onClick={handleMarkAsDone}
+            className="rounded-md bg-[#ccff00] px-4 py-2 text-xs font-semibold text-black"
+          >
             <i className="fa-solid fa-check mr-1"></i>
             Mark as Done
           </button>
