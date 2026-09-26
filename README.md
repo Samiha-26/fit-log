@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog — Workout Library
+
+FitLog is a responsive workout library and planning web application built for managing daily workouts. Users can browse exercises, view workout details, add workouts to today's plan, save workouts for later, sort their plans, and track completed exercises.
+
+## Live Website
+
+*Add your deployed website link here after deployment.*
+
+## GitHub Repository
+
+*[https://github.com/Samiha-26/fit-log](https://github.com/Samiha-26/fit-log)*
+
+## Technologies Used
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* DaisyUI
+* React Toastify
+* REST API
+* Font Awesome
+* Next/Image
+
+## Features
+
+* Browse workouts from the FitLog API
+* View detailed workout information including equipment, duration, calories, rating, sets, reps, and instructions
+* Add workouts to Today's Plan
+* Save workouts for later
+* Prevent duplicate workouts from being added
+* Limit Today's Plan to five workouts
+* Mark workouts as completed
+* Remove workouts from Today's Plan or Saved list
+* Sort workouts by duration, calories, or rating
+* Responsive design for mobile, tablet, and desktop
+* Toast notifications for workout actions
+* Loading state while workout data is being fetched
+* Custom 404 page
+* Empty state for Today's Plan and Saved workouts
+* Navbar counters for planned and saved workouts
+
+## API
+
+FitLog uses the following API:
+
+https://api.abcz.workers.dev/api/fitlog
+
+Single workout:
+
+https://api.abcz.workers.dev/api/fitlog/:id
+
+## Project Structure
+
+```text
+fit-log/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── Homepage/
+│   │   │   │   ├── Banner.tsx
+│   │   │   │   └── Library.tsx
+│   │   │   ├── WorkoutDetails/
+│   │   │   │   ├── SaveForLater.tsx
+│   │   │   │   └── TodaysPlan.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── LibraryCard.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   └── WorkoutCard.tsx
+│   │   ├── my-plan/
+│   │   │   ├── loading.tsx
+│   │   │   └── page.tsx
+│   │   ├── workouts/
+│   │   │   └── [workoutId]/
+│   │   │       └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── loading.tsx
+│   │   ├── not-found.tsx
+│   │   └── page.tsx
+│   ├── assets/
+│   ├── context/
+│   │   └── WorkoutContext.tsx
+│   └── types/
+│       └── LibraryTypes.tsx
+
+```
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository and install the dependencies:
+
+```bash
+npm install
+
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create a production build:
 
-## Learn More
+```bash
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Highlights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+FitLog focuses on a clean dark interface with a simple workout-planning flow. The application uses React Context API to manage Today's Plan and Saved workouts across the application.

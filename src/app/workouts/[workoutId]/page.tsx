@@ -126,9 +126,14 @@ const WorkoutDetailsPage = async ({ params }: IWorkoutDetailsPageProps) => {
             </ol>
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <TodaysPlan workout ={libraryData}></TodaysPlan>
-            <SaveForLater workout ={libraryData}></SaveForLater>
+          <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+            <div className="w-full sm:w-auto">
+              <TodaysPlan workout={libraryData} />
+            </div>
+
+            <div className="w-full sm:w-auto">
+              <SaveForLater workout={libraryData} />
+            </div>
           </div>
         </div>
       </div>
