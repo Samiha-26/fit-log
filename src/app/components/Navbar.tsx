@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal items-center gap-2 px-1">
             <li>
-              <Link href="/workouts" className={getLinkClass("/workouts")}>
+              <Link href="/" className={getLinkClass("/")}>
                 Workouts
               </Link>
             </li>

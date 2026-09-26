@@ -6,9 +6,13 @@ import React, { useContext } from "react";
 const SaveForLater = ({ workout }: { workout: ILibrary }) => {
     const { savedPlan, setSavedPlan } = useContext(WorkoutContext);
 
-  const handleSaveForLater = () => {
-    setSavedPlan([...savedPlan, workout]);
-  };
+ const handleSaveForLater = () => {
+  if (savedPlan.some((item) => item.id === workout.id)) {
+    return;
+  }
+
+  setSavedPlan([...savedPlan, workout]);
+};
   return (
     <button
       className="flex items-center gap-2 rounded-md border border-gray-700 px-5 py-3 text-sm text-white"

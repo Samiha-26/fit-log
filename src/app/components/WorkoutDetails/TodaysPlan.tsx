@@ -1,5 +1,4 @@
 "use client";
-
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { ILibrary } from "@/types/LibraryTypes";
 import { useContext } from "react";
@@ -11,7 +10,9 @@ const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
     if (plan.length >= 5) {
       return;
     }
-
+    if (plan.some((item) => item.id === workout.id)) {
+      return;
+    }
     setPlan([...plan, workout]);
   };
 
