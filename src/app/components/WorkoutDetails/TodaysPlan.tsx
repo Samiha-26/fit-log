@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
   const { plan, setPlan } = useContext(WorkoutContext);
+  const isPlanFull = plan.length >= 5;
 
   const handleTodaysPlan = () => {
     if (plan.length >= 5) {
@@ -22,11 +23,12 @@ const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
 
   return (
     <button
-      className="flex items-center gap-2 rounded-md bg-[#ccff00] px-5 py-3 text-sm font-semibold text-black"
+      disabled={isPlanFull}
+      className="flex items-center gap-2 rounded-md bg-[#ccff00] px-5 py-3 text-sm font-semibold text-black disabled:cursor-not-allowed disabled:opacity-50"
       onClick={handleTodaysPlan}
     >
       <i className="fa-regular fa-calendar-plus"></i>
-      Add to today&apos;s plan
+      {isPlanFull ? "Plan Full" : "Add to today's plan"}
     </button>
   );
 };
