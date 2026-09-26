@@ -12,7 +12,7 @@ const LibraryCard = ({ library }: { library: ILibrary }) => {
             alt={library.name}
             width={400}
             height={250}
-            className="h-52 w-full object-cover"
+            className="h-65 w-full object-cover"
           />
         </figure>
 
