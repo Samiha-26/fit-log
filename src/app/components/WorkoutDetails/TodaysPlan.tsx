@@ -8,6 +8,7 @@ const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
   const { plan, setPlan } = useContext(WorkoutContext);
 
   const handleTodaysPlan = () => {
+     console.log("CLICKED");
     setPlan([...plan, workout]);
   };
   return (

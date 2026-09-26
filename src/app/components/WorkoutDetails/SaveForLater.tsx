@@ -12,7 +12,7 @@ const SaveForLater = ({ workout }: { workout: ILibrary }) => {
   return (
     <button
       className="flex items-center gap-2 rounded-md border border-gray-700 px-5 py-3 text-sm text-white"
-      onClick={() => handleSaveForLater}
+      onClick={() => handleSaveForLater()}
     >
       <i className="fa-regular fa-bookmark"></i>
       Save for later

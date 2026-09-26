@@ -4,10 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "@/assets/logo.png";
+import { useContext } from "react";
+import { WorkoutContext } from "@/context/WorkoutContext";
 
 const Navbar = () => {
   const pathname = usePathname();
-
+  const { plan, savedPlan } = useContext(WorkoutContext);
+  
   const getLinkClass = (path: string) => {
     return pathname === path
       ? "bg-[#ccff00]/10 text-[#ccff00] font-semibold rounded-full"
@@ -81,14 +84,14 @@ const Navbar = () => {
         <button className="btn btn-ghost btn-sm gap-2 font-normal">
           Plan
           <span className="badge badge-sm rounded-full border-none bg-[#ccff00] text-black">
-            0
+           {plan.length}
           </span>
         </button>
 
         <button className="btn btn-ghost btn-sm gap-2 font-normal">
           Saved
           <span className="badge badge-sm rounded-full border border-gray-500 bg-transparent text-current">
-            0
+            {savedPlan.length}
           </span>
         </button>
       </div>
