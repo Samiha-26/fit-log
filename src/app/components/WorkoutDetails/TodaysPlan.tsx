@@ -2,18 +2,22 @@
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { ILibrary } from "@/types/LibraryTypes";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
   const { plan, setPlan } = useContext(WorkoutContext);
 
   const handleTodaysPlan = () => {
     if (plan.length >= 5) {
+      toast.error("Today's plan can have only 5 workouts.");
       return;
     }
     if (plan.some((item) => item.id === workout.id)) {
+      toast.info("This workout is already in today's plan.");
       return;
     }
     setPlan([...plan, workout]);
+    toast.success("Added to today's plan!");
   };
 
   return (

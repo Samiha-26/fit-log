@@ -2,16 +2,19 @@
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { ILibrary } from "@/types/LibraryTypes";
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
 const SaveForLater = ({ workout }: { workout: ILibrary }) => {
     const { savedPlan, setSavedPlan } = useContext(WorkoutContext);
 
  const handleSaveForLater = () => {
   if (savedPlan.some((item) => item.id === workout.id)) {
+     toast.info("This workout is already saved.");
     return;
   }
 
   setSavedPlan([...savedPlan, workout]);
+  toast.success("Workout saved for later!");
 };
   return (
     <button

@@ -5,6 +5,7 @@ import { ILibrary } from "@/types/LibraryTypes";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface IWorkoutCardProps {
   workout: ILibrary;
@@ -23,9 +24,11 @@ const WorkoutCard = ({
     } else {
       setSavedPlan(savedPlan.filter((item) => item.id !== workout.id));
     }
+    toast.error("Workout removed!");
   };
   const handleMarkAsDone = () => {
     setPlan(plan.filter((item) => item.id !== workout.id));
+    toast.success("Workout marked as done!");
   };
 
   return (
