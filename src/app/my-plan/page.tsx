@@ -3,7 +3,6 @@
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { useContext, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import WorkoutCard from "../components/WorkoutCard";
 
 const Page = () => {
@@ -91,7 +90,7 @@ const Page = () => {
               </p>
 
               <Link
-                href="/workouts"
+                href="/"
                 className="mt-5 inline-block rounded-full bg-[#ccff00] px-5 py-2 text-xs font-semibold text-black transition hover:opacity-90"
               >
                 Go to workouts
