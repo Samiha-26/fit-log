@@ -13,7 +13,7 @@ const TodaysPlan = ({ workout }: { workout: ILibrary }) => {
       return;
     }
     if (plan.some((item) => item.id === workout.id)) {
-      toast.info("This workout is already in today's plan.");
+      toast.warning("This workout is already in today's plan.");
       return;
     }
     setPlan([...plan, workout]);

@@ -9,7 +9,7 @@ const SaveForLater = ({ workout }: { workout: ILibrary }) => {
 
  const handleSaveForLater = () => {
   if (savedPlan.some((item) => item.id === workout.id)) {
-     toast.info("This workout is already saved.");
+     toast.warning("This workout is already saved.");
     return;
   }
 

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="">
+    <section className="mt-5">
       <div className="container mx-auto navbar px-6 shadow-sm bg-black">
         <div className="navbar-start">
           <div className="dropdown">
