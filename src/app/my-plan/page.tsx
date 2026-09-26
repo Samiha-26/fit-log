@@ -3,6 +3,8 @@
 import { WorkoutContext } from "@/context/WorkoutContext";
 import { useContext, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import WorkoutCard from "../components/WorkoutCard";
 
 const Page = () => {
   const { plan, savedPlan } = useContext(WorkoutContext);
@@ -97,19 +99,15 @@ const Page = () => {
             </div>
           </div>
         ) : (
-          <div className="grid gap-4">
-            {currentList.map((workout) => (
-              <div
-                key={workout.id}
-                className="rounded-xl border border-gray-800 bg-[#15171D] p-4"
-              >
-                <h2 className="font-bold text-white">{workout.name}</h2>
-                <p className="mt-1 text-xs text-gray-500">
-                  {workout.duration} min • {workout.caloriesBurned} calories
-                </p>
-              </div>
-            ))}
-          </div>
+<div className="flex flex-col gap-4">
+  {currentList.map((workout) => (
+    <WorkoutCard
+      key={workout.id}
+      workout={workout}
+      showMarkAsDone={activeTab === "plan"}
+    />
+  ))}
+</div>
         )}
       </div>
     </div>
